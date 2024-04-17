@@ -1,4 +1,4 @@
-package valerio.U5W3D3.entity;
+package valerio.U5W3D3.entityES1;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

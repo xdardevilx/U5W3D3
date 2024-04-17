@@ -1,10 +1,9 @@
-package valerio.U5W3D3.entity;
+package valerio.U5W3D3.entityES1;
 
 import valerio.U5W3D3.DataSource;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
 
 public class Adapter implements DataSource {
     private Info info;

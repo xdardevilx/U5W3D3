@@ -2,11 +2,15 @@ package valerio.U5W3D3;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import valerio.U5W3D3.entity.Adapter;
-import valerio.U5W3D3.entity.Info;
-import valerio.U5W3D3.entity.UserData;
+import valerio.U5W3D3.entityES1.Adapter;
+import valerio.U5W3D3.entityES1.Info;
+import valerio.U5W3D3.entityES1.UserData;
+import valerio.U5W3D3.entityES2.Book;
+import valerio.U5W3D3.entityES2.Page;
+import valerio.U5W3D3.entityES2.Section;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 @Component
 public class Runner implements CommandLineRunner {
@@ -21,5 +25,44 @@ public class Runner implements CommandLineRunner {
 
         System.out.println("Nome completo : " + userData.getNomeCompleto());
         System.out.println("Eta : " + userData.getEta());
+
+
+        Book book = new Book(Arrays.asList("autore1", "autore2", "autore3"),  19.58);
+
+        Page page1 = new Page(1);
+        Page page2 = new Page(2);
+        Page page3 = new Page(3);
+        Page page4 = new Page(4);
+        Page page5 = new Page(5);
+        Page page6 = new Page(6);
+
+
+        Section section1 = new Section();
+        section1.add(page1);
+        section1.add(page2);
+
+        Section section2 = new Section();
+        section2.add(page3);
+        section2.add(page4);
+
+        Section section3 = new Section();
+        section3.add(page5);
+        section3.add(page6);
+
+        book.addComponent(section1);
+        book.addComponent(section2);
+        book.addComponent(section3);
+
+        page1.print();
+
+        System.out.println("----------------");
+
+        section1.print();
+
+        System.out.println("----------------");
+
+        book.print();
+
+        System.out.println("numero totale di pagine : " + book.GetNumberOfPages());
     }
 }
