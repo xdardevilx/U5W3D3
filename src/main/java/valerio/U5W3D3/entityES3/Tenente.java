@@ -7,8 +7,5 @@ public class Tenente extends BaseOfficer {
         salary = 1000;
     }
 
-    @Override
-    public void setSuperior(Officer officer){
-        this.superior = officer;
-    }
+
 }

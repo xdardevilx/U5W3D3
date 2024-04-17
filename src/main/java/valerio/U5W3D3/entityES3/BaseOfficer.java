@@ -11,9 +11,11 @@ public abstract class BaseOfficer implements Officer {
     protected int salary;
 
 
-    public void SetSuperior(Officer superior){
-        this.superior = superior;
+    @Override
+    public void  setSuperior(Officer officer){
+        this.superior = officer;
     }
+
     public void  handleRequest(int amount){
         if(amount <= salary){
             System.out.println(getClass().getSimpleName() + "può gestire l'importo di " + amount);

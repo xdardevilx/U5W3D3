@@ -8,8 +8,5 @@ public class Maggiore extends BaseOfficer{
         salary= 3000;
     }
 
-    @Override
-    public void setSuperior(Officer officer){
-        this.superior = officer;
-    }
+
 }
