@@ -8,6 +8,9 @@ import valerio.U5W3D3.entityES1.UserData;
 import valerio.U5W3D3.entityES2.Book;
 import valerio.U5W3D3.entityES2.Page;
 import valerio.U5W3D3.entityES2.Section;
+import valerio.U5W3D3.entityES3.Capitano;
+import valerio.U5W3D3.entityES3.Maggiore;
+import valerio.U5W3D3.entityES3.Tenente;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -25,6 +28,8 @@ public class Runner implements CommandLineRunner {
 
         System.out.println("Nome completo : " + userData.getNomeCompleto());
         System.out.println("Eta : " + userData.getEta());
+
+//        --------------------------------esercizio 2
 
 
         Book book = new Book(Arrays.asList("autore1", "autore2", "autore3"),  19.58);
@@ -64,5 +69,24 @@ public class Runner implements CommandLineRunner {
         book.print();
 
         System.out.println("numero totale di pagine : " + book.GetNumberOfPages());
+
+
+//        ----------------------------------------------------------------esercizio 3----------------------------------------
+
+        System.out.println("---------------------------------------------");
+        Officer tenente = new Tenente();
+        Officer capitano = new Capitano();
+        Officer maggiore = new Maggiore();
+
+        tenente.setSuperior(capitano);
+        capitano.setSuperior(maggiore);
+
+        int[] amounts = {500, 1500, 2500, 3500, 4500, 5500};
+
+        for (int amount : amounts){
+            System.out.println("Richiesta di stipendio di " + amount + "€");
+            System.out.println("---------------------");
+            tenente.handleRequest(amount);
+        }
     }
 }
